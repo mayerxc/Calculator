@@ -20,6 +20,7 @@ function clear() {
 
 function operator(op) {
     str = $(".top-result").text();
+    //can't put two operators in a row
     if (str.slice(-1) === "+" || str.slice(-1) === "-" || str.slice(-1) === "*" || str.slice(-1) === "/") {
         str = str.substring(0, str.length - 1);
         str = str.concat(op);
@@ -35,14 +36,16 @@ function operator(op) {
 
 }
 
+
 function equal() {
     try {
-
+        //evaluate the string
         var answer = eval($(".top-result").text());
         $(".bottom-result").text(answer);
         $(".top-result").text("");
         //$(".top-result").text( $(".top-result").text() + " = " + answer );
     } catch (err) {
+        //if error, display error
         $(".bottom-result").text("Error");
     }
 
@@ -52,7 +55,7 @@ function equal() {
 $(document).ready(function () {
 
     $(".number").click(function () {
-        number($(this).text());
+        number( $(this).text() );
     });
 
     $(".clear").click(function () {
@@ -68,7 +71,7 @@ $(document).ready(function () {
         equal();
     });
 
-
+    //add in functionality to type numbers and operators from keyboard
     $("body").keypress(function (e) {
         e.preventDefault();
         char = String.fromCharCode(e.which);
@@ -97,7 +100,4 @@ $(document).ready(function () {
         }
         char = "";
     });
-
-
-
 });

@@ -1,3 +1,11 @@
-A Pen created at CodePen.io. You can find this one at http://codepen.io/mayerxc/pen/PzrPaz.
+Calculator app
+
+Used Jquery and tried to copy the look of the Google Calculator
+
+See it at 
+http://chrismayer.me/Calculator/
+
+Also on codepen at 
+https://codepen.io/mayerxc/pen/PzrPaz.
 
  
